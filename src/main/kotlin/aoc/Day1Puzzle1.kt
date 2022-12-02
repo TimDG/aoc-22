@@ -32,9 +32,7 @@ data class Elf(val calories: List<Int>) {
 }
 
 fun main() {
-    val file = "input"
-
-    val input = File("inputs/day1/1/$file.txt").readText()
+    val input = File("inputs/day1.txt").readText()
     val day1Puzzle1 = Day1Puzzle1(input)
     println(day1Puzzle1.elfCarryingMost())
     println(day1Puzzle1.topThree())

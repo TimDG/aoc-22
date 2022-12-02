@@ -12,13 +12,13 @@ class Day2Test {
 
     @Test
     fun `test part 1`() {
-        val totalScore = Day2(input).simpleScore()
+        val totalScore = input.lines().sumOf { simple(it) }
         assertEquals(15, totalScore)
     }
 
     @Test
     fun `test part 2`() {
-        val optimalScore = Day2(input).optimalScore()
+        val optimalScore = input.lines().sumOf { optimal(it) }
         assertEquals(12, optimalScore)
     }
 }

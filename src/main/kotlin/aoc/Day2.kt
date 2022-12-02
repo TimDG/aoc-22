@@ -2,7 +2,7 @@ package aoc
 
 import java.io.File
 
-private fun optimal(s: String) = when (s) {
+fun optimal(s: String) = when (s) {
     "A X" -> 0 + 3
     "A Y" -> 3 + 1
     "A Z" -> 6 + 2
@@ -15,7 +15,7 @@ private fun optimal(s: String) = when (s) {
     else -> throw IllegalStateException()
 }
 
-private fun simple(s: String) = when (s) {
+fun simple(s: String) = when (s) {
     "A X" -> 1 + 3
     "A Y" -> 2 + 6
     "A Z" -> 3 + 0

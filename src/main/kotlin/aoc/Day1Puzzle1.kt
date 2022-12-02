@@ -32,7 +32,6 @@ data class Elf(val calories: List<Int>) {
 }
 
 fun main() {
-//    val file = "test"
     val file = "input"
 
     val input = File("inputs/day1/1/$file.txt").readText()

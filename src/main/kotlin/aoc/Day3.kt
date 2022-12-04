@@ -14,13 +14,27 @@ class Day3(input: String) {
         val common = rucksacks.map { it.commonType() }
         println(common)
         return common.sumOf {
-            if (it.isUpperCase()) {
-                it.minus('A').plus(27)
-            } else {
-                it.minus('a').plus(1)
-            }
+            getPriority(it)
         }
     }
+
+    private fun getPriority(it: Char) = if (it.isUpperCase()) {
+        it.minus('A').plus(27)
+    } else {
+        it.minus('a').plus(1)
+    }
+
+    fun groupedPriorities() = rucksacks.indices.step(3).map {
+        rucksacks.subList(it, it + 3)
+    }.sumOf {
+        val contents = it.map { r -> r.contents() }
+        val badge = contents[0].intersect(contents[1])
+            .intersect(contents[2])
+            .first()
+        getPriority(badge)
+    }
+
+
 }
 
 data class Rucksack(val compartment1: List<Char>, val compartment2: List<Char>) {
@@ -36,6 +50,8 @@ data class Rucksack(val compartment1: List<Char>, val compartment2: List<Char>) 
     fun commonType() =
         compartment1.intersect(compartment2.toSet()).first()
 
+    fun contents() = compartment1.union(compartment2)
+
 }
 
 fun main() {
@@ -43,4 +59,5 @@ fun main() {
 
     val day3 = Day3(input)
     println(day3.prioritySum())
+    println(day3.groupedPriorities())
 }

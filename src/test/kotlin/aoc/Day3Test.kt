@@ -18,4 +18,10 @@ internal class Day3Test  {
         val day3 = Day3(input)
         assertEquals(157, day3.prioritySum())
     }
+
+    @Test
+    internal fun `test part 2`() {
+        val day3 = Day3(input)
+        assertEquals(70,  day3.groupedPriorities())
+    }
 }

@@ -1,7 +1,5 @@
 package aoc
 
-import java.io.File
-
 class Day1Puzzle1(calorieList: String) {
     private val elves: List<Elf>
 
@@ -32,7 +30,7 @@ data class Elf(val calories: List<Int>) {
 }
 
 fun main() {
-    val input = File("inputs/day1.txt").readText()
+    val input = getInput("day1")
     val day1Puzzle1 = Day1Puzzle1(input)
     println(day1Puzzle1.elfCarryingMost())
     println(day1Puzzle1.topThree())

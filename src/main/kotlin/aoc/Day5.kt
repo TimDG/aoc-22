@@ -1,7 +1,6 @@
 package aoc
 
-import java.io.File
-import java.util.Stack
+import java.util.*
 
 class Day5(input: String) {
     val instructions: List<Instruction>
@@ -90,7 +89,7 @@ data class Instruction(val fromStack: Int, val toStack: Int, val amount: Int) {
 }
 
 fun main() {
-    val input = File("inputs/day5.txt").readText()
+    val input = getInput("day5")
     val day5 = Day5(input)
     day5.executeInstructions()
 

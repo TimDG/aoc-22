@@ -1,7 +1,5 @@
 package aoc
 
-import java.io.File
-
 class Day4(input: String) {
 
     private val assignments: List<Assignment>
@@ -45,7 +43,7 @@ private fun IntRange.overlaps(subRange: IntRange): Boolean {
 }
 
 fun main() {
-    val input = File("inputs/day4.txt").readText()
+    val input = getInput("day4")
 
     val day4 = Day4(input)
     println(day4.countFullOverlaps())

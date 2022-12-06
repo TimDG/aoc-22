@@ -1,7 +1,5 @@
 package aoc
 
-import java.io.File
-
 fun optimal(s: String) = when (s) {
     "A X" -> 0 + 3
     "A Y" -> 3 + 1
@@ -29,7 +27,7 @@ fun simple(s: String) = when (s) {
 }
 
 fun main() {
-    val input = File("inputs/day2.txt").readText()
+    val input = getInput("day2")
 
     val lines = input.lines()
     println(lines.sumOf { simple(it) })

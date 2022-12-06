@@ -1,7 +1,5 @@
 package aoc
 
-import java.io.File
-
 fun findStartMarker(input: String) = findMarker(input, 4)
 
 fun findStartMessageMarker(input: String) = findMarker(input, 14)
@@ -17,7 +15,7 @@ private fun findMarker(input: String, markerLength: Int): Int {
 }
 
 fun main() {
-    val input = File("inputs/day6.txt").readText()
+    val input = getInput("day6")
 
     println(findStartMarker(input))
     println(findStartMessageMarker(input))

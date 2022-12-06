@@ -1,7 +1,5 @@
 package aoc
 
-import java.io.File
-
 class Day3(input: String) {
     private val rucksacks: List<Rucksack>
 
@@ -55,7 +53,7 @@ data class Rucksack(val compartment1: List<Char>, val compartment2: List<Char>) 
 }
 
 fun main() {
-    val input = File("inputs/day3.txt").readText()
+    val input = getInput("day3")
 
     val day3 = Day3(input)
     println(day3.prioritySum())

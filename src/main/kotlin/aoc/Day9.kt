@@ -37,7 +37,7 @@ class Day9(input: String, length: Int = 2) {
     private fun move(function: (Position) -> Position) {
         headPosition = function.invoke(headPosition)
         snakePositions[0] = headPosition
-        snakePositions.keys.drop(1)
+        (1.. snakePositions.keys.last())
             .forEach {
                 snakePositions[it] = snakePositions[it]!!.moveTo(snakePositions[it-1]!!)
             }
@@ -51,7 +51,6 @@ data class Position(val x: Int, val y: Int) {
             //Actually move
             val diffX = targetPosition.x - x
             val diffY = targetPosition.y - y
-
 
             if (diffX == 0) {
                 return copy(y = y + diffY / abs(diffY))
